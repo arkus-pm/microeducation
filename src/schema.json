@@ -1,0 +1,173 @@
+{
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "number"
+    },
+    "contentURL": {
+      "type": "string"
+    },
+    "courses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "flowTopic": {
+            "type": "string",
+            "default": "newTopic"
+          },
+          "version": {
+            "type": "number",
+            "default": 1
+          },
+          "id": {
+            "type": "string",
+            "default": "123e4567-e89b-12d3-a456-426614174000"
+          },
+          "card": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "imageURL": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "imageURL",
+              "description"
+            ],
+            "default": {
+        "title": "Forge of the heart",
+        "imageURL": "http://mw1.google.com/mw-planetary/sky/skytiles_v1/50_49_6.jpg",
+        "description": "Some description..."
+      }
+          },
+          "preview": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "imageURL": {
+                "type": "string"
+              },
+              "overview": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "imageURL",
+              "overview"
+            ],
+            "default": {
+        "title": "Forge of the heart",
+        "imageURL": "http://mw1.google.com/mw-planetary/sky/skytiles_v1/50_49_6.jpg",
+        "overview": "Some overview..."
+      }
+          },
+          "episodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "integer"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "stories": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "version": {
+                        "type": "number"
+                      },
+                      "position": {
+                        "type": "integer"
+                      },
+                      "transition": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ]
+                      },
+                      "content": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "illustrationURL": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "illustrationURL",
+                          "text"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "version",
+                      "position",
+                      "transition",
+                      "content"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "position",
+                "title",
+                "description",
+                "stories"
+              ]
+            }
+          }
+        },
+        "required": [
+          "version",
+          "id",
+          "flowTopic",
+          "card",
+          "preview",
+          "episodes"
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "contentURL",
+    "courses"
+  ]
+}

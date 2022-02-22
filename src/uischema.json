@@ -1,0 +1,18 @@
+{
+    "type": "VerticalLayout",
+    "elements": [
+        {
+            "type": "ListWithDetail",
+            "scope": "#/properties/courses",
+            "options": {
+            	"type": "VerticalLayout",
+            	"elements":[
+                {
+                "type": "ListWithDetail",
+           		 "scope": "#/items/properties/episodes"
+           		}
+           		]
+            }
+        }
+    ]
+}

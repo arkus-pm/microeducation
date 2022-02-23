@@ -18,17 +18,7 @@ import ratingControlTester from './ratingControlTester';
 import { makeStyles } from '@mui/styles';
 import { createAjv } from '@jsonforms/core';
 import { Generate } from '@jsonforms/core';
-
-// const uischema = Generate.uiSchema(schema);
-let arr = [
-Generate.uiSchema(schema),
-Generate.uiSchema(schema.properties.courses.items),
-Generate.uiSchema(schema.properties.courses.items.properties.episodes.items),
-Generate.uiSchema(schema.properties.courses.items.properties.episodes.items.properties.stories.items),
-Generate.uiSchema(schema.properties.courses.items.properties.card),
-Generate.uiSchema(schema.properties.courses.items.properties.preview)
-];
-arr.forEach(e=>console.log(JSON.stringify(e)));
+import { v4 as uuidv4 } from 'uuid';
 
 
 const handleDefaultsAjv = createAjv({useDefaults: true});
@@ -71,14 +61,27 @@ const renderers = [
   { tester: ratingControlTester, renderer: RatingControl },
 ];
 
+const modifiedData = (s: string):string => {return s.replaceAll(/\$uuid/g,uuidv4())};
+
 const App = () => {
   const classes = useStyles();
   const [data, setData] = useState<any>(initialData);
   const stringifiedData = useMemo(() => JSON.stringify(data, null, 2), [data]);
 
+  const setDataWithGeneration = (formData:any) => {
+    let stringifiedWithGenerationFormData = JSON.stringify(formData).replaceAll(/\$uuid/g,uuidv4());
+    let generationFormData = JSON.parse(stringifiedWithGenerationFormData);
+    let stringifiedFormData = JSON.stringify(formData);
+    (stringifiedFormData != stringifiedWithGenerationFormData) ? setData(generationFormData) : setData(formData);
+  }
+  
+  // const generatedValuesData = useMemo(() => JSON.stringify(data, null, 2).replaceAll(/$uuid/, uuidv4()), [data]);
+
   const clearData = () => {
     setData({});
   };
+
+  
 
 const [displayBound, setDisplayBound] = useState<boolean>(true);
 const toggleJSONView = () => {setDisplayBound(!displayBound)};
@@ -103,6 +106,7 @@ const toggleJSONView = () => {setDisplayBound(!displayBound)};
             multiline
             variant="outlined" 
             value={stringifiedData}
+            // value={generatedValuesData}
             onChange={(event)=>{ setData(JSON.parse(event.target.value));}}
             >
             </TextField> }
@@ -143,7 +147,9 @@ const toggleJSONView = () => {setDisplayBound(!displayBound)};
               data={data}
               renderers={renderers}
               cells={materialCells}
-              onChange={({ errors, data }) => {setData(data);}}
+              onChange={({ errors, data }) => {
+               setDataWithGeneration(data);
+              }}
               ajv={handleDefaultsAjv}
             />
           </div>

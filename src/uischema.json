@@ -30,7 +30,10 @@
                                 },
                                 {
                                     "type": "Control",
-                                    "scope": "#/properties/id"
+                                    "scope": "#/properties/id",
+                                    "options": {
+                                        "readonly": true
+                                    }
                                 }
                             ]
                         },
@@ -110,7 +113,10 @@
                                                     "elements": [
                                                         {
                                                             "type": "Control",
-                                                            "scope": "#/properties/id"
+                                                            "scope": "#/properties/id",
+                                                            "options": {
+                                                                "readonly": true
+                                                            }
                                                         },
                                                         {
                                                             "type": "Control",
@@ -128,7 +134,7 @@
                                                 },
                                                 {
                                                     "type": "Category",
-                                                    "label": "Episodes",
+                                                    "label": "Stories",
                                                     "elements": [
                                                         {
                                                             "type": "Control",
@@ -139,7 +145,10 @@
                                                                     "elements": [
                                                                         {
                                                                             "type": "Control",
-                                                                            "scope": "#/properties/id"
+                                                                            "scope": "#/properties/id",
+                                                                            "options": {
+                                                                                "readonly": true
+                                                                            }
                                                                         },
                                                                         {
                                                                             "type": "Control",

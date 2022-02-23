@@ -1,0 +1,17 @@
+{
+    "type": "VerticalLayout",
+    "elements": [
+        {
+            "type": "Control",
+            "scope": "#/properties/version"
+        },
+        {
+            "type": "Control",
+            "scope": "#/properties/contentURL"
+        },
+        {
+            "type": "ListWithDetail",
+            "scope": "#/properties/courses"
+        }
+    ]
+}

@@ -2,7 +2,9 @@
   "type": "object",
   "properties": {
     "version": {
-      "type": "number"
+      "type": "number",
+      "minimum": 0,
+      "default": 1.0
     },
     "contentURL": {
       "type": "string"
@@ -18,35 +20,39 @@
           },
           "version": {
             "type": "number",
-            "default": 1
+            "default": 1,
+            "minimum": 0
           },
           "id": {
             "type": "string",
-            "default": "123e4567-e89b-12d3-a456-426614174000"
+            "default": "$uuid"
           },
           "card": {
             "type": "object",
             "properties": {
               "title": {
-                "type": "string"
+                "type": "string",
+                "default": "New card title"
               },
               "imageURL": {
-                "type": "string"
+                "type": "string",
+                "default": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg"
               },
               "description": {
-                "type": "string"
+                "type": "string",
+                "default": "New card description"
               }
+            },
+            "default":{
+              "title": "New card title",
+              "imageURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+              "overview": "New card overview"
             },
             "required": [
               "title",
               "imageURL",
               "description"
-            ],
-            "default": {
-        "title": "Forge of the heart",
-        "imageURL": "http://mw1.google.com/mw-planetary/sky/skytiles_v1/50_49_6.jpg",
-        "description": "Some description..."
-      }
+            ]
           },
           "preview": {
             "type": "object",
@@ -61,16 +67,16 @@
                 "type": "string"
               }
             },
+            "default":{
+              "title": "New preview title",
+              "imageURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+              "overview": "New preview overview"
+            },
             "required": [
               "title",
               "imageURL",
               "overview"
-            ],
-            "default": {
-        "title": "Forge of the heart",
-        "imageURL": "http://mw1.google.com/mw-planetary/sky/skytiles_v1/50_49_6.jpg",
-        "overview": "Some overview..."
-      }
+            ]
           },
           "episodes": {
             "type": "array",
@@ -78,16 +84,21 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "string"
+                  "type": "string",
+                  "default": "$uuid"
                 },
                 "position": {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 1
                 },
                 "title": {
-                  "type": "string"
+                  "type": "string",
+                  "default": "New episode title"
                 },
                 "description": {
-                  "type": "string"
+                  "type": "string",
+                  "default": "New episode description"
                 },
                 "stories": {
                   "type": "array",
@@ -95,20 +106,30 @@
                     "type": "object",
                     "properties": {
                       "id": {
-                        "type": "string"
+                        "type": "string",
+                        "default": "$uuid"
                       },
                       "version": {
-                        "type": "number"
+                        "type": "number",
+                        "minimum": 0,
+                        "default": 1.0
                       },
                       "position": {
-                        "type": "integer"
+                        "type": "integer",
+                        "minimum": 0,
+                        "default": 1
                       },
                       "transition": {
                         "type": "object",
                         "properties": {
                           "type": {
-                            "type": "string"
+                            "type": "string",
+                            "enum": ["fade_in"],
+                            "default": "fade_in"
                           }
+                        },
+                        "default": {
+                          "type": "fade_in"
                         },
                         "required": [
                           "type"
@@ -118,7 +139,12 @@
                         "type": "object",
                         "properties": {
                           "type": {
-                            "type": "string"
+                            "type": "string",
+                            "enum": [
+                              "textWithIllustration",
+                              "questionWithOneValidAnswer",
+                              "quoteWithShareButton"
+                            ]
                           },
                           "illustrationURL": {
                             "type": "string"
@@ -126,6 +152,11 @@
                           "text": {
                             "type": "string"
                           }
+                        },
+                        "default":{
+                          "type": "textWithIllustration",
+                          "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                          "text": "New story text"
                         },
                         "required": [
                           "type",
@@ -167,7 +198,6 @@
   },
   "required": [
     "version",
-    "contentURL",
     "courses"
   ]
 }

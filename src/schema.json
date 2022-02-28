@@ -1,203 +1,232 @@
 {
-  "type": "object",
-  "properties": {
-    "version": {
-      "type": "number",
-      "minimum": 0,
-      "default": 1.0
-    },
-    "contentURL": {
-      "type": "string"
-    },
-    "courses": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "flowTopic": {
-            "type": "string",
-            "default": "newTopic"
-          },
-          "version": {
+    "type": "object",
+    "properties": {
+        "version": {
             "type": "number",
-            "default": 1,
-            "minimum": 0
-          },
-          "id": {
-            "type": "string",
-            "default": "$uuid"
-          },
-          "card": {
-            "type": "object",
-            "properties": {
-              "title": {
-                "type": "string",
-                "default": "New card title"
-              },
-              "imageURL": {
-                "type": "string",
-                "default": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg"
-              },
-              "description": {
-                "type": "string",
-                "default": "New card description"
-              }
-            },
-            "default":{
-              "title": "New card title",
-              "imageURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
-              "overview": "New card overview"
-            },
-            "required": [
-              "title",
-              "imageURL",
-              "description"
-            ]
-          },
-          "preview": {
-            "type": "object",
-            "properties": {
-              "title": {
-                "type": "string"
-              },
-              "imageURL": {
-                "type": "string"
-              },
-              "overview": {
-                "type": "string"
-              }
-            },
-            "default":{
-              "title": "New preview title",
-              "imageURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
-              "overview": "New preview overview"
-            },
-            "required": [
-              "title",
-              "imageURL",
-              "overview"
-            ]
-          },
-          "episodes": {
+            "minimum": 0,
+            "default": 1.0
+        },
+        "contentURL": {
+            "type": "string"
+        },
+        "courses": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "default": "$uuid"
-                },
-                "position": {
-                  "type": "integer",
-                  "minimum": 0,
-                  "default": 1
-                },
-                "title": {
-                  "type": "string",
-                  "default": "New episode title"
-                },
-                "description": {
-                  "type": "string",
-                  "default": "New episode description"
-                },
-                "stories": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
+                "type": "object",
+                "properties": {
+                    "flowTopic": {
+                        "type": "string",
+                        "default": "newTopic"
+                    },
+                    "version": {
+                        "type": "number",
+                        "default": 1,
+                        "minimum": 0
+                    },
+                    "id": {
                         "type": "string",
                         "default": "$uuid"
-                      },
-                      "version": {
-                        "type": "number",
-                        "minimum": 0,
-                        "default": 1.0
-                      },
-                      "position": {
-                        "type": "integer",
-                        "minimum": 0,
-                        "default": 1
-                      },
-                      "transition": {
+                    },
+                    "card": {
                         "type": "object",
                         "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": ["fade_in"],
-                            "default": "fade_in"
-                          }
+                            "title": {
+                                "type": "string",
+                                "default": "New card title"
+                            },
+                            "imageURL": {
+                                "type": "string",
+                                "default": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg"
+                            },
+                            "description": {
+                                "type": "string",
+                                "default": "New card description"
+                            }
                         },
                         "default": {
-                          "type": "fade_in"
+                            "title": "New card title",
+                            "imageURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                            "overview": "New card overview"
                         },
                         "required": [
-                          "type"
+                            "title",
+                            "imageURL",
+                            "description"
                         ]
-                      },
-                      "content": {
+                    },
+                    "preview": {
                         "type": "object",
                         "properties": {
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "textWithIllustration",
-                              "questionWithOneValidAnswer",
-                              "quoteWithShareButton"
-                            ]
-                          },
-                          "illustrationURL": {
-                            "type": "string"
-                          },
-                          "text": {
-                            "type": "string"
-                          }
+                            "title": {
+                                "type": "string"
+                            },
+                            "imageURL": {
+                                "type": "string"
+                            },
+                            "overview": {
+                                "type": "string"
+                            }
                         },
-                        "default":{
-                          "type": "textWithIllustration",
-                          "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
-                          "text": "New story text"
+                        "default": {
+                            "title": "New preview title",
+                            "imageURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                            "overview": "New preview overview"
                         },
                         "required": [
-                          "type",
-                          "illustrationURL",
-                          "text"
+                            "title",
+                            "imageURL",
+                            "overview"
                         ]
-                      }
                     },
-                    "required": [
-                      "id",
-                      "version",
-                      "position",
-                      "transition",
-                      "content"
-                    ]
-                  }
-                }
-              },
-              "required": [
-                "id",
-                "position",
-                "title",
-                "description",
-                "stories"
-              ]
+                    "episodes": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "default": "$uuid"
+                                },
+                                "position": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 1
+                                },
+                                "title": {
+                                    "type": "string",
+                                    "default": "New episode title"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "default": "New episode description"
+                                },
+                                "stories": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string",
+                                                "default": "$uuid"
+                                            },
+                                            "version": {
+                                                "type": "number",
+                                                "minimum": 0,
+                                                "default": 1.0
+                                            },
+                                            "position": {
+                                                "type": "integer",
+                                                "minimum": 0,
+                                                "default": 1
+                                            },
+                                            "transition": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "fade_in"
+                                                        ],
+                                                        "default": "fade_in"
+                                                    }
+                                                },
+                                                "default": {
+                                                    "type": "fade_in"
+                                                },
+                                                "required": [
+                                                    "type"
+                                                ]
+                                            },
+                                            "content": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "textWithIllustration",
+                                                            "questionWithOneValidAnswer",
+                                                            "quoteWithShareButton"
+                                                        ]
+                                                    },
+                                                    "illustrationURL": {
+                                                        "type": "string"
+                                                    },
+                                                    "text": {
+                                                        "type": "string"
+                                                    },
+                                                    "options": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "text": {
+                                                                    "type": "string"
+                                                                },
+                                                                "valid": {
+                                                                    "type": "boolean"
+                                                                },
+                                                                "explanation":{
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "callToAction": {
+                                                        "type": "string"
+                                                    }
+
+                                                },
+                                                "default": {
+                                                    "type": "textWithIllustration",
+                                                    "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                                                    "text": "New story text"
+                                                },
+                                                "required": [
+                                                    "type"
+                                                ]
+                                            }
+                                        },
+                                        "required": [
+                                            "id",
+                                            "version",
+                                            "position",
+                                            "transition",
+                                            "content"
+                                        ],
+                                        "default": {
+                                            "id": "60e5daf0-ac93-4550-b443-aaf7158cf356",
+                                            "version": 1,
+                                            "position": 1,
+                                            "transition": {
+                                                "type": "fade_in"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "position",
+                                "title",
+                                "description",
+                                "stories"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "version",
+                    "id",
+                    "flowTopic",
+                    "card",
+                    "preview",
+                    "episodes"
+                ]
             }
-          }
-        },
-        "required": [
-          "version",
-          "id",
-          "flowTopic",
-          "card",
-          "preview",
-          "episodes"
-        ]
-      }
-    }
-  },
-  "required": [
-    "version",
-    "courses"
-  ]
+        }
+    },
+    "required": [
+        "version",
+        "courses"
+    ]
 }

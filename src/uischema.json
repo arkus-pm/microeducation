@@ -164,7 +164,95 @@
                                                                         },
                                                                         {
                                                                             "type": "Control",
-                                                                            "scope": "#/properties/content"
+                                                                            "scope": "#/properties/content",
+                                                                            "options": {
+                                                                                "detail": {
+                                                                                    "type": "VerticalLayout",
+                                                                                    "elements": [
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/type"
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/illustrationURL",
+                                                                                            "rule": {
+                                                                                                "effect": "SHOW",
+                                                                                                "condition": {
+                                                                                                    "scope": "#/properties/type",
+                                                                                                    "schema": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "const": "textWithIllustration"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "const": "questionWithOneValidAnswer"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/text",
+                                                                                            "rule": {
+                                                                                                "effect": "SHOW",
+                                                                                                "condition": {
+                                                                                                    "scope": "#/properties/type",
+                                                                                                    "schema": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "const": "textWithIllustration"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "const": "questionWithOneValidAnswer"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "const": "quoteWithShareButton"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/options",
+                                                                                            "rule": {
+                                                                                                "effect": "SHOW",
+                                                                                                "condition": {
+                                                                                                    "scope": "#/properties/type",
+                                                                                                    "schema": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "const": "questionWithOneValidAnswer"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/callToAction",
+                                                                                            "rule": {
+                                                                                                "effect": "SHOW",
+                                                                                                "condition": {
+                                                                                                    "scope": "#/properties/type",
+                                                                                                    "schema": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "const": "quoteWithShareButton"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            }
                                                                         }
                                                                     ]
                                                                 },

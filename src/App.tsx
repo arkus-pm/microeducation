@@ -53,7 +53,7 @@ const useStyles = makeStyles({
   },
 });
 
-const initialData = {};//{  "type": "object",  "properties": {    "name": {      "type": "string"    },    "vegetarian": {      "type": "boolean"    },    "birthDate": {      "type": "string"    },    "personalData": {      "type": "object",      "properties": {        "age": {          "type": "integer"        }      },      "additionalProperties": true,      "required": [        "age"      ]    },    "postalCode": {      "type": "string"    }  },  "additionalProperties": true,  "required": [    "name",    "vegetarian",    "birthDate",    "personalData",    "postalCode"  ]}//{"version":1.23,"contentURL":"","courses":[{"version":1.23123,"id":"bddab411-0bca-44f8-92c1-9204555d8045","flowTopic":"QA test","card":{"title":"Forge of the heart","imageURL":"http://mw1.google.com/mw-planetary/sky/skytiles_v1/50_49_6.jpg","description":"Some description..."},"preview":{"title":"Forge of the heart","imageURL":"http://mw1.google.com/mw-planetary/sky/skytiles_v1/50_49_6.jpg","overview":"Some overview..."},"episodes":[{"id":"5b171580-813e-415b-8b3c-b69c546ba54f","position":0,"title":"Focus on something else","description":"Learn technics to control...","stories":[{"id":"648a1650-22d6-4d75-8167-8eb90c0c79a2","version":1.23,"position":1,"transition":{"type":"fade_in"},"content":{"type":"textIllustration","illustrationURL":"http://mw1.google.com/mw-planetary/sky/skytiles_v1/50_49_6.jpg","text":"<b>Greetings<\\b>\n\nLet\\s start our journey with a few kind words about yourself\n\nYou are brave to be here!"}}]},{"id":"f33cc592-f16c-4701-8d95-44e71e85468b","position":1,"title":"Episode 2","description":"Episode 2 description","stories":[{"id":"b48b01d7-05f8-469b-9034-a1af04a28fca","version":1.23,"position":1,"transition":{"type":"fade_in"},"content":{"type":"textIllustration","illustrationURL":"http://mw1.google.com/mw-planetary/sky/skytiles_v1/50_49_6.jpg","text":"<b>Greetings<\\b>\n\nLet\\s start our journey with a few kind words about yourself\n\nYou are brave to be here!"}}]}]}]};
+const initialData = {};
 
 const renderers = [
   ...materialRenderers,
@@ -74,8 +74,6 @@ const App = () => {
     let stringifiedFormData = JSON.stringify(formData);
     (stringifiedFormData != stringifiedWithGenerationFormData) ? setData(generationFormData) : setData(formData);
   }
-  
-  // const generatedValuesData = useMemo(() => JSON.stringify(data, null, 2).replaceAll(/$uuid/, uuidv4()), [data]);
 
   const clearData = () => {
     setData({});
@@ -106,7 +104,6 @@ const toggleJSONView = () => {setDisplayBound(!displayBound)};
             multiline
             variant="outlined" 
             value={stringifiedData}
-            // value={generatedValuesData}
             onChange={(event)=>{ setData(JSON.parse(event.target.value));}}
             >
             </TextField> }

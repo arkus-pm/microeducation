@@ -83,15 +83,7 @@
                         "items": {
                             "type": "object",
                             "properties": {
-                                "id": {
-                                    "type": "string",
-                                    "default": "$uuid"
-                                },
-                                "position": {
-                                    "type": "integer",
-                                    "minimum": 0,
-                                    "default": 1
-                                },
+                                
                                 "title": {
                                     "type": "string",
                                     "default": "New episode title"
@@ -99,6 +91,15 @@
                                 "description": {
                                     "type": "string",
                                     "default": "New episode description"
+                                },
+                                "position": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 1
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "default": "$uuid"
                                 },
                                 "stories": {
                                     "type": "array",
@@ -143,12 +144,15 @@
                                                     "type": {
                                                         "type": "string",
                                                         "enum": [
-                                                            "textWithIllustration",
+                                                            "textIllustration",
                                                             "questionWithOneValidAnswer",
                                                             "quoteWithShareButton"
                                                         ]
                                                     },
                                                     "illustrationURL": {
+                                                        "type": "string"
+                                                    },
+                                                    "header": {
                                                         "type": "string"
                                                     },
                                                     "text": {
@@ -177,8 +181,9 @@
 
                                                 },
                                                 "default": {
-                                                    "type": "textWithIllustration",
+                                                    "type": "textIllustration",
                                                     "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                                                    "header": "New story header",
                                                     "text": "New story text"
                                                 },
                                                 "required": [

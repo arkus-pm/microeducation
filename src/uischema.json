@@ -120,10 +120,6 @@
                                                         },
                                                         {
                                                             "type": "Control",
-                                                            "scope": "#/properties/position"
-                                                        },
-                                                        {
-                                                            "type": "Control",
                                                             "scope": "#/properties/title"
                                                         },
                                                         {
@@ -154,10 +150,7 @@
                                                                             "type": "Control",
                                                                             "scope": "#/properties/version"
                                                                         },
-                                                                        {
-                                                                            "type": "Control",
-                                                                            "scope": "#/properties/position"
-                                                                        },
+                                                                        
                                                                         {
                                                                             "type": "Control",
                                                                             "scope": "#/properties/transition"
@@ -183,10 +176,27 @@
                                                                                                     "schema": {
                                                                                                         "anyOf": [
                                                                                                             {
-                                                                                                                "const": "textWithIllustration"
+                                                                                                                "const": "textIllustration"
                                                                                                             },
                                                                                                             {
                                                                                                                 "const": "questionWithOneValidAnswer"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/header",
+                                                                                            "rule": {
+                                                                                                "effect": "SHOW",
+                                                                                                "condition": {
+                                                                                                    "scope": "#/properties/type",
+                                                                                                    "schema": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "const": "textIllustration"
                                                                                                             }
                                                                                                         ]
                                                                                                     }
@@ -203,7 +213,7 @@
                                                                                                     "schema": {
                                                                                                         "anyOf": [
                                                                                                             {
-                                                                                                                "const": "textWithIllustration"
+                                                                                                                "const": "textIllustration"
                                                                                                             },
                                                                                                             {
                                                                                                                 "const": "questionWithOneValidAnswer"

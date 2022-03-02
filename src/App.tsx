@@ -19,6 +19,7 @@ import { makeStyles } from '@mui/styles';
 import { createAjv } from '@jsonforms/core';
 import { Generate } from '@jsonforms/core';
 import { v4 as uuidv4 } from 'uuid';
+import React, { useRef, useLayoutEffect } from 'react';
 
 
 const handleDefaultsAjv = createAjv({useDefaults: true});
@@ -69,11 +70,15 @@ const App = () => {
   const stringifiedData = useMemo(() => JSON.stringify(data, null, 2), [data]);
 
   const setDataWithGeneration = (formData:any) => {
-    let stringifiedWithGenerationFormData = JSON.stringify(formData).replaceAll(/\$uuid/g,uuidv4());
+    let positionedData = formData;
+    if (positionedData.courses) positionedData.courses = positionedData.courses.map((c:any)=>{if (c.episodes) c.episodes.map((ep:any,i:number)=>{ep.position=i; if (ep.stories) ep.stories = ep.stories.map((st:any,j:number)=>{st.position=j; return st}); return ep});return c});
+    let stringifiedWithGenerationFormData = JSON.stringify(positionedData).replaceAll(/\$uuid/g,uuidv4());
     let generationFormData = JSON.parse(stringifiedWithGenerationFormData);
     let stringifiedFormData = JSON.stringify(formData);
     (stringifiedFormData != stringifiedWithGenerationFormData) ? setData(generationFormData) : setData(formData);
   }
+
+
 
   const clearData = () => {
     setData({});

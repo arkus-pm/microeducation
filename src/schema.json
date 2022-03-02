@@ -127,15 +127,11 @@
                                                         "type": "string",
                                                         "enum": [
                                                             "fade_in"
-                                                        ],
-                                                        "default": "fade_in"
+                                                        ]
                                                     }
                                                 },
-                                                "default": {
-                                                    "type": "fade_in"
-                                                },
                                                 "required": [
-                                                    "type"
+                                                    
                                                 ]
                                             },
                                             "content": {
@@ -195,16 +191,12 @@
                                             "id",
                                             "version",
                                             "position",
-                                            "transition",
                                             "content"
                                         ],
                                         "default": {
                                             "id": "60e5daf0-ac93-4550-b443-aaf7158cf356",
                                             "version": 1,
-                                            "position": 1,
-                                            "transition": {
-                                                "type": "fade_in"
-                                            }
+                                            "position": 1
                                         }
                                     }
                                 }

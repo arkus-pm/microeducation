@@ -20,7 +20,16 @@ import { createAjv } from '@jsonforms/core';
 import { Generate } from '@jsonforms/core';
 import { v4 as uuidv4 } from 'uuid';
 import React, { useRef, useLayoutEffect } from 'react';
-
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+  useParams,
+  useMatch,
+  useResolvedPath
+} from "react-router-dom";
 
 const handleDefaultsAjv = createAjv({useDefaults: true});
 
@@ -89,8 +98,133 @@ const App = () => {
 const [displayBound, setDisplayBound] = useState<boolean>(true);
 const toggleJSONView = () => {setDisplayBound(!displayBound)};
 
-  return (
-    <Fragment>
+// function Main(){
+//   return (
+    
+//   );
+// }
+
+function renderCourses(courses:any){
+   if (courses) return ( courses.map((c:any, i:number)=>{
+      return(
+        <Grid item>
+        <Link to={`/preview/${i}`} style={{ textDecoration: 'none' }}>
+          <Button>
+            {c.flowTopic}
+          </Button>
+          </Link>
+            </Grid>
+        );
+    })
+   );
+}
+
+function renderEpisodes(episodes:any, courseNumber:string){    
+   if (episodes) return ( episodes.map((e:any, i:number)=>{
+      return(
+        <Grid item>
+        <Link to={`/preview/${courseNumber}/${i}`} style={{ textDecoration: 'none' }}>
+          <Button>
+            {e.title}
+          </Button>
+          </Link>
+            </Grid>
+        );
+    })
+   );
+}
+
+function renderStories(stories:any, episodeNumber:string){    
+   if (stories) return ( stories.map((s:any, i:number)=>{
+      return(
+        <Grid item>
+          <Button>
+            {s.id}
+          </Button>
+            </Grid>
+        );
+    })
+   );
+}
+
+function Preview(){
+  const params = useParams();
+  let courses = data.courses;
+  console.log(courses);
+   return (
+ <Grid>
+    {/*<a> {JSON.stringify(courses, null, 2)} </a>*/}
+    <a> {JSON.stringify(params)} </a>
+    <Grid
+    container
+    direction="column"
+    >
+    {renderCourses(courses)}
+    </Grid>
+    <Course/>
+    <Episode/>
+    </Grid>
+   );
+
+
+
+}
+
+function Course(){
+  const params = useParams();
+  if (params.course){ 
+  let {episodes} = data.courses[params.course||0];
+  console.log(episodes);
+   if (params.course) return (
+ <Grid>
+    {/* <a> {JSON.stringify(episodes, null, 2)} </a> */}
+    <Grid
+    container
+    direction="column"
+    >
+    {renderEpisodes(episodes,params.course)}
+    </Grid>
+    </Grid>
+   );
+ }
+    return(null);
+
+
+
+}
+
+function Episode(){
+  const params = useParams();
+  console.log(params);
+  if (params.episode&&params.course){  
+  let stories = data.courses[params.course||0].episodes[params.episode||0]!.stories;
+  console.log(stories);
+   return (
+ <Grid>
+    {/* <a> {JSON.stringify(stories, null, 2)} </a>/ */}
+    <Grid
+    container
+    direction="column"
+    >
+    {renderStories(stories,params.episode)}
+    </Grid>
+    </Grid>
+   );
+ }
+    return(null);
+
+
+
+}
+
+
+  
+return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+
+<Fragment>
 
       <Grid
         container
@@ -136,6 +270,16 @@ const toggleJSONView = () => {setDisplayBound(!displayBound)};
             {!displayBound?'Show':'Hide'} JSON
           </Button>
           </Grid>
+          <Grid item>
+          <Link to="preview" style={{ textDecoration: 'none' }}>
+          <Button
+            color='secondary'
+            variant='contained'
+          >
+            Preview
+          </Button>
+          </Link>
+          </Grid>
           </Grid>
         </Grid>
         <Grid item sm={6}>
@@ -158,7 +302,18 @@ const toggleJSONView = () => {setDisplayBound(!displayBound)};
         </Grid>
       </Grid>
     </Fragment>
+
+
+        } />
+        <Route path="/preview" element={<Preview />} />
+        <Route path="/preview/:course/">
+          <Route path=":episode" element={<Preview />} />
+          <Route path="" element={<Preview />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
+
 };
 
 export default App;

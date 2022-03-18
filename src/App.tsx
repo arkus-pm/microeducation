@@ -19,29 +19,46 @@ import { makeStyles } from '@mui/styles';
 import { createAjv } from '@jsonforms/core';
 import { Generate } from '@jsonforms/core';
 import { v4 as uuidv4 } from 'uuid';
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect, memo } from 'react';
 import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
   useLocation,
-  useParams,
   useMatch,
   useResolvedPath
 } from "react-router-dom";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+
+const important = <T extends string>(s: T): T => `${s} !important` as T;
 
 const handleDefaultsAjv = createAjv({useDefaults: true});
 
 const useStyles = makeStyles({
+  "@keyframes slideInFromLeft": {
+  "0%": {
+    transform: "translateX(100%)"
+  },
+  "100%": {
+    transform: "translateX(0)"
+  }
+},
+  slideFromLeft: {
+    animation: "1s ease-out 1s 1 slideInFromLeft"
+  },
+  fauxButton: {
+    textTransform: important("none")
+  },
   container: {
     padding: '1em',
     width: '100%',
     height: 'auto'
   },
   title: {
-    textAlign: 'center',
-    padding: '0.25em',
+    textAlign: 'left',
   },
   dataContent: {
     overflow: 'auto',
@@ -87,7 +104,16 @@ const App = () => {
     (stringifiedFormData != stringifiedWithGenerationFormData) ? setData(generationFormData) : setData(formData);
   }
 
+const [params, setParams] = useState<any>({preview: false});
 
+
+function togglePreview(){
+  params.preview = !params.preview;
+  setParams({...params});
+  
+}
+
+console.log(JSON.stringify(params));
 
   const clearData = () => {
     setData({});
@@ -106,13 +132,35 @@ const toggleJSONView = () => {setDisplayBound(!displayBound)};
 
 function renderCourses(courses:any){
    if (courses) return ( courses.map((c:any, i:number)=>{
+     let currentParams = params;
       return(
         <Grid item>
-        <Link to={`/preview/${i}`} style={{ textDecoration: 'none' }}>
-          <Button>
-            {c.flowTopic}
+
+          <Button className={classes.fauxButton}
+          onClick={()=>{currentParams.course=""+i;currentParams.episode=null;setParams({...currentParams});console.log(currentParams)}}
+          >
+            {/*{c.flowTopic}*/}
+            <Card sx={{ maxWidth: 345 }} raised={i==params.course}>
+      <CardMedia
+        component="img"
+        height="140"
+        image={c.card.imageURL}
+        alt="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant={'h6'} className={classes.title} component="div">
+          {c.card.title}
+        </Typography>
+        <Typography variant={'body1'} className={classes.title} color="text.secondary">
+          {c.card.description}
+        </Typography>
+        <Typography variant={'body2'} className={classes.title} color="text.secondary">
+          Episodes: {c.episodes?.length||0}
+        </Typography>
+      </CardContent>
+    </Card>
           </Button>
-          </Link>
+
             </Grid>
         );
     })
@@ -120,14 +168,31 @@ function renderCourses(courses:any){
 }
 
 function renderEpisodes(episodes:any, courseNumber:string){    
+  let currentParams = params;
    if (episodes) return ( episodes.map((e:any, i:number)=>{
       return(
         <Grid item>
-        <Link to={`/preview/${courseNumber}/${i}`} style={{ textDecoration: 'none' }}>
-          <Button>
-            {e.title}
+
+          <Button className={classes.fauxButton}
+          onClick={()=>{currentParams.episode=""+i;setParams({...currentParams});console.log(currentParams)}}
+          >
+            
+
+            <Card sx={{ maxWidth: 345 }} raised={i==params.episode}>
+      <CardContent>
+        <Typography gutterBottom variant={'h6'} className={classes.title} component="div">
+          {e.title}
+        </Typography>
+        <Typography variant={'body1'} className={classes.title} color="text.secondary">
+          {e.description}
+        </Typography>
+        <Typography variant={'body2'} className={classes.title} color="text.secondary">
+          Stories: {e.stories?.length||0}
+        </Typography>
+      </CardContent>
+    </Card>
           </Button>
-          </Link>
+
             </Grid>
         );
     })
@@ -138,8 +203,24 @@ function renderStories(stories:any, episodeNumber:string){
    if (stories) return ( stories.map((s:any, i:number)=>{
       return(
         <Grid item>
-          <Button>
-            {s.id}
+          <Button className={classes.fauxButton}>
+            {/*{s.id}*/}
+            <Card sx={{ maxWidth: 150 }}>
+      <CardMedia
+        component="img"
+        height="200"
+        image={s.content.illustrationURL}
+        alt="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant={'h6'} className={classes.title} component="div">
+          {s.content.header}
+        </Typography>
+        <Typography variant={'body1'} className={classes.title} color="text.secondary">
+          {s.content.text}
+        </Typography>
+      </CardContent>
+    </Card>
           </Button>
             </Grid>
         );
@@ -148,22 +229,38 @@ function renderStories(stories:any, episodeNumber:string){
 }
 
 function Preview(){
-  const params = useParams();
   let courses = data.courses;
   console.log(courses);
    return (
- <Grid>
-    {/*<a> {JSON.stringify(courses, null, 2)} </a>*/}
-    <a> {JSON.stringify(params)} </a>
-    <Grid
-    container
-    direction="column"
-    >
-    {renderCourses(courses)}
-    </Grid>
-    <Course/>
-    <Episode/>
-    </Grid>
+       <Grid container direction="row" xs={12}>
+      {/*<a> {JSON.stringify(courses, null, 2)} </a>*/}
+      
+      <Grid container>
+      <a> {JSON.stringify(params)} </a>
+      </Grid>
+      <Grid
+      item
+      direction="column"
+      xs={2}
+      >
+      {renderCourses(courses)}
+      </Grid>
+      <Grid
+      item
+      direction="column"
+      xs={2}
+      >
+      <Course/>
+      </Grid>
+      <Grid
+      item
+      direction="column"
+      xs={8}
+      >
+      <Episode/>
+      </Grid>
+      
+</Grid>
    );
 
 
@@ -171,18 +268,19 @@ function Preview(){
 }
 
 function Course(){
-  const params = useParams();
-  if (params.course){ 
-  let {episodes} = data.courses[params.course||0];
+  let currentParams = params;
+  console.log("cp:"+JSON.stringify(currentParams));
+  if (currentParams.course){ 
+  let {episodes} = data.courses[currentParams.course||0];
   console.log(episodes);
-   if (params.course) return (
+   if (currentParams.course) return (
  <Grid>
     {/* <a> {JSON.stringify(episodes, null, 2)} </a> */}
     <Grid
     container
     direction="column"
     >
-    {renderEpisodes(episodes,params.course)}
+    {!!params.course?renderEpisodes(episodes,currentParams.course):null}
     </Grid>
     </Grid>
    );
@@ -194,7 +292,6 @@ function Course(){
 }
 
 function Episode(){
-  const params = useParams();
   console.log(params);
   if (params.episode&&params.course){  
   let stories = data.courses[params.course||0].episodes[params.episode||0]!.stories;
@@ -203,8 +300,9 @@ function Episode(){
  <Grid>
     {/* <a> {JSON.stringify(stories, null, 2)} </a>/ */}
     <Grid
+    item
+    direction="row"
     container
-    direction="column"
     >
     {renderStories(stories,params.episode)}
     </Grid>
@@ -218,14 +316,107 @@ function Episode(){
 }
 
 
-  
 return (
+
+<Fragment>
+<Grid container direction="row" className={classes.slideFromLeft}>
+      <Grid
+        // container
+        item
+        direction="column"
+        justifyContent="center"
+        spacing={2}
+        className={classes.container}
+        xs={params.preview?4:12}
+      >
+        <Grid item sm={6}>
+          {displayBound && <Typography variant={'h4'} className={classes.title}>
+            JSON
+          </Typography>}
+           {displayBound &&  <TextField
+            className={classes.dataContent}
+            id='boundData'
+            multiline
+            variant="outlined" 
+            value={stringifiedData}
+            onChange={(event)=>{ setData(JSON.parse(event.target.value));}}
+            >
+            </TextField> }
+          <Grid
+          container
+          justifyContent="center"
+          direction="row"
+          spacing={2}
+          >
+          <Grid item>
+          <Button
+            onClick={clearData}
+            color='primary'
+            variant='contained'
+          >
+            Clear data
+          </Button>
+          </Grid>
+          <Grid item>
+          <Button
+            onClick={toggleJSONView}
+            color='secondary'
+            variant='contained'
+          >
+            {!displayBound?'Show':'Hide'} JSON
+          </Button>
+          </Grid>
+          <Grid item>
+
+          <Button
+            color='success'
+            variant='contained'
+            onClick={togglePreview}
+          >
+            Preview
+          </Button>
+
+          </Grid>
+          </Grid>
+        </Grid>
+        <Grid
+        item
+        xs
+        >
+          <Typography variant={'h4'} className={classes.title}>
+            MicroEd Form
+          </Typography>
+          {!params.preview && <div className={classes.demoform}>
+            <JsonForms
+              schema={schema}
+              uischema={uischema}
+              data={data}
+              renderers={renderers}
+              cells={materialCells}
+              onChange={({ errors, data }) => {
+               setDataWithGeneration(data);
+              }}
+              ajv={handleDefaultsAjv}
+            />
+          </div>}
+        </Grid>
+      </Grid>
+      <Grid
+      item
+      // container
+      direction="row"
+      xs={8}>
+      {params.preview&&<Preview />}
+      </Grid>
+      </Grid>
+    </Fragment>
+
+  );
+{/*return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={
-
 <Fragment>
-
       <Grid
         container
         direction="column"
@@ -302,8 +493,6 @@ return (
         </Grid>
       </Grid>
     </Fragment>
-
-
         } />
         <Route path="/preview" element={<Preview />} />
         <Route path="/preview/:course/">
@@ -313,7 +502,9 @@ return (
       </Routes>
     </BrowserRouter>
   );
+*/}
 
 };
+
 
 export default App;

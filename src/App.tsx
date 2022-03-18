@@ -38,16 +38,23 @@ const important = <T extends string>(s: T): T => `${s} !important` as T;
 const handleDefaultsAjv = createAjv({useDefaults: true});
 
 const useStyles = makeStyles({
-  "@keyframes slideInFromLeft": {
-  "0%": {
-    transform: "translateX(100%)"
+  episodeDescription: {
+    textAlign: 'left',
+    overflowY: "auto",
+   textOverflow: "ellipsis",
+   display: "-webkit-box",
+   "-webkit-line-clamp": 5, /* number of lines to show */
+           "line-clamp": 5, 
+   "-webkit-box-orient": "vertical"
   },
-  "100%": {
-    transform: "translateX(0)"
-  }
-},
-  slideFromLeft: {
-    animation: "1s ease-out 1s 1 slideInFromLeft"
+  storyDescription: {
+   textAlign: 'left',
+   overflowY: "auto",
+   textOverflow: "ellipsis",
+   display: "-webkit-box",
+   "-webkit-line-clamp": 15, /* number of lines to show */
+           "line-clamp": 15, 
+   "-webkit-box-orient": "vertical"
   },
   fauxButton: {
     textTransform: important("none")
@@ -183,10 +190,10 @@ function renderEpisodes(episodes:any, courseNumber:string){
         <Typography gutterBottom variant={'h6'} className={classes.title} component="div">
           {e.title}
         </Typography>
-        <Typography variant={'body1'} className={classes.title} color="text.secondary">
+        <Typography variant={'caption'} className={classes.episodeDescription} color="text.secondary">
           {e.description}
         </Typography>
-        <Typography variant={'body2'} className={classes.title} color="text.secondary">
+        <Typography variant={'caption'} className={classes.title} color="text.secondary">
           Stories: {e.stories?.length||0}
         </Typography>
       </CardContent>
@@ -205,7 +212,7 @@ function renderStories(stories:any, episodeNumber:string){
         <Grid item>
           <Button className={classes.fauxButton}>
             {/*{s.id}*/}
-            <Card sx={{ maxWidth: 150 }}>
+            <Card sx={{ maxWidth: 250 }}>
       <CardMedia
         component="img"
         height="200"
@@ -216,7 +223,7 @@ function renderStories(stories:any, episodeNumber:string){
         <Typography gutterBottom variant={'h6'} className={classes.title} component="div">
           {s.content.header}
         </Typography>
-        <Typography variant={'body1'} className={classes.title} color="text.secondary">
+        <Typography variant={'caption'} className={classes.storyDescription} color="text.secondary">
           {s.content.text}
         </Typography>
       </CardContent>
@@ -319,7 +326,7 @@ function Episode(){
 return (
 
 <Fragment>
-<Grid container direction="row" className={classes.slideFromLeft}>
+<Grid container direction="row">
       <Grid
         // container
         item

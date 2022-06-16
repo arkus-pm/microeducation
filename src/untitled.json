@@ -1,0 +1,507 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "flowTopic": "childhood_trauma",
+      "version": 1,
+      "id": "7c971376-f935-40e3-96be-67d96e1772a0",
+      "card": {
+        "title": "Cope with a toxic family",
+        "imageURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/card2.png",
+        "header": "Microlearning",
+        "description": "How to overcome negative upbringing and childhood trauma"
+      },
+      "preview": {
+        "title": "Cope with a toxic family",
+        "imageURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/preview.png",
+        "overview": "Daily interactive stories about overcoming childhood trauma and growing as a person. Read about how different people have confronted and evaluated their experiences, and find out what helped them move past them. After completing the course, you will understand how childhood experiences can affect adult life, how parents can lead a child astray and how to get back on it later. Travel along with the characters through short interactive stories to understand how to overcome childhood traumas and apply it in your life."
+      },
+      "episodes": [
+        {
+          "title": "Intro: Evaluate your experience",
+          "description": "Introduction to the course. Find your own way to overcome childhood traumas.",
+          "position": 0,
+          "id": "e79745d3-cfdb-40a5-b379-db62ef9e37a2",
+          "stories": [
+            {
+              "id": "7ab09f76-5751-4f2b-a8ff-618731772bd2",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "You should be a lawyer!",
+          "description": "\"I want the best for you!\" Parents want “the best” for their child.",
+          "position": 1,
+          "id": "57557d4d-6416-4a78-add3-976a89491702",
+          "stories": [
+            {
+              "id": "815ad3ca-e5d2-4100-b8b3-98e76f00c502",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-0.png",
+                "header": "Meet Amanda",
+                "text": "A kind and artistic person. Maybe a little shy."
+              }
+            },
+            {
+              "id": "8aef7bf4-c914-43e6-949e-be433abcc084",
+              "version": 1,
+              "position": 1,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-1.png",
+                "header": "Amanda is creative",
+                "text": "Growing up she always had a knack for colors and shapes. She spent her days absorbed in her fantasies — daydreaming about colorful worlds. She wanted to be an artist."
+              }
+            },
+            {
+              "id": "12ef2ea7-4685-4278-8d0c-70990b186224",
+              "version": 1,
+              "position": 2,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-2.png",
+                "header": "Meet Jack & Jennifer",
+                "text": "Her parents wanted the best for her. They have decided Amanda will be a lawyer."
+              }
+            },
+            {
+              "id": "f158ab8d-a40d-4f7e-992b-a8de715fa088",
+              "version": 1,
+              "position": 3,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-3.png",
+                "header": "One day things changed",
+                "text": "At first, Jennifer entertained Amanda’s artistic pursuits, but when junior year of high school came along, she became strict and cold.  “You have to prepare for college. It’s your future” "
+              }
+            },
+            {
+              "id": "93a38573-aef5-48a3-91ec-0444a92c3891",
+              "version": 1,
+              "position": 4,
+              "content": {
+                "type": "question",
+                "questionFooter": "Select to continue",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-4.png",
+                "question": "Jennifer took it seriously  She controlled every aspect of Amanda’s life making sure she was focused on her studies. Do you think it helped her daughter be a better student?",
+                "answerOptions": [
+                  {
+                    "text": "Yes",
+                    "explanation": {
+                      "header": "",
+                      "text": "Well, let's look"
+                    },
+                    "isCorrect": true
+                  },
+                  {
+                    "text": "No",
+                    "explanation": {
+                      "header": "",
+                      "text": "Well, let's look"
+                    },
+                    "isCorrect": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": "c07ffce4-00af-4a6b-a9f2-23c1445faf85",
+              "version": 1,
+              "position": 5,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-5.png",
+                "header": "Of course, it didn’t.",
+                "text": "Amanda reacted to stress by skipping classes and neglecting homework. She distanced herself and picked up bad habits. She still drew but hid it from her parents. "
+              }
+            },
+            {
+              "id": "5136ba60-bd4f-4dfd-8451-204372807150",
+              "version": 1,
+              "position": 6,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-6.png",
+                "header": "Her father wasn’t happy",
+                "text": "Jack, always tired from work, didn’t have time to listen to the reasons why she had trouble with her grades. He just went berserk."
+              }
+            },
+            {
+              "id": "07b7f650-2bce-4d11-a354-92f1090cb8a7",
+              "version": 1,
+              "position": 7,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-7.png",
+                "header": "They didn’t listen",
+                "text": "When they went to a family psychologist, Jack and Jennifer complained that their daughter had become unruly. But when their parenting style got criticized — they promptly ended the sessions. "
+              }
+            },
+            {
+              "id": "d246a355-041b-4e3c-9205-702ef9a9e1fd",
+              "version": 1,
+              "position": 8,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-8.png",
+                "header": "Amanda caved in",
+                "text": "She did what she was told and ended up graduating with a law degree."
+              }
+            },
+            {
+              "id": "53fd790f-fe63-4d96-bbca-9af65d5fe321",
+              "version": 1,
+              "position": 9,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-9.png",
+                "header": "She forgot her passion",
+                "text": "She stopped making art and prepared to start a career in a field she hated."
+              }
+            },
+            {
+              "id": "ba631458-045b-426d-b7f3-cd5f7e6a7bd1",
+              "version": 1,
+              "position": 10,
+              "content": {
+                "type": "question",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-10.png",
+                "question": "How do you think Amanda's career turned out?  ",
+                "questionFooter": "Select to continue",
+                "answerOptions": [
+                  {
+                    "isCorrect": false,
+                    "text": "She is happy",
+                    "explanation": {
+                      "header": "",
+                      "text": "Far from it. She resents every second of her workday. She looks at the clock constantly to see if it has finally ended."
+                    }
+                  },
+                  {
+                    "isCorrect": false,
+                    "text": "She got used to it",
+                    "explanation": {
+                      "header": "",
+                      "text": "Even though she tried, her heart wasn’t in it. "
+                    }
+                  },
+                  {
+                    "isCorrect": true,
+                    "text": "She is miserable",
+                    "explanation": {
+                      "header": "",
+                      "text": "You guessed right"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "c5253385-b2f4-40ec-8c84-462874e559fb",
+              "version": 1,
+              "position": 11,
+              "content": {
+                "type": "question",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-11.png",
+                "question": "Her parents wanted her to be assertive and independent. Do you think they succeeded?",
+                "questionFooter": "Select to continue",
+                "answerOptions": [
+                  {
+                    "isCorrect": false,
+                    "text": "Yes. She became assertive and independent. ",
+                    "explanation": {
+                      "header": "",
+                      "text": "How could she? When she had to follow rules and was yelled at for every expression of her independence. "
+                    }
+                  },
+                  {
+                    "isCorrect": true,
+                    "text": "No",
+                    "explanation": {
+                      "header": "",
+                      "text": "That's right!"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "360ff798-8949-4847-8aae-cf833d9a3ba6",
+              "version": 1,
+              "position": 12,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-12.png",
+                "header": "She grew up to be quiet and fearful",
+                "text": "Every time Amanda was under pressure she remembered her parents. How she felt small and insignificant. How her voice didn’t matter. She carried this all the way into her adult life. "
+              }
+            },
+            {
+              "id": "56625144-e914-4181-926a-8559437d4c8d",
+              "version": 1,
+              "position": 13,
+              "content": {
+                "type": "question",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-13.png",
+                "question": "Her dreams were still full of vivid colors When her mind wandered, she still imagined what her art could be like.  Do you think she can still be an artist? ",
+                "questionFooter": "Select to continue",
+                "answerOptions": [
+                  {
+                    "text": "It’s never too late",
+                    "isCorrect": true,
+                    "explanation": {
+                      "header": "",
+                      "text": "Good job!"
+                    }
+                  },
+                  {
+                    "text": "The ship has sailed",
+                    "isCorrect": false,
+                    "explanation": {
+                      "header": "",
+                      "text": "Did it? But life is not over yet."
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "328af77d-2003-4969-b147-0a5a092e07c7",
+              "version": 1,
+              "position": 14,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-14.png",
+                "header": "She thought so too",
+                "text": "Even after many years, her passion never truly went away. Amanda found the courage to finally do what she wanted. She took art courses, and boy, were they hard.  But in the end, she finally became what she was always meant to be.  An artist. "
+              }
+            },
+            {
+              "id": "ff8c42ed-1517-4c59-a3b3-12c30dc56904",
+              "version": 1,
+              "position": 15,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://cdn.betterme.world/meditation/playground_microed/microed_illustrations_test/illustration-format-for-ed-stories-14.png",
+                "header": "Childhood leaves an imprint",
+                "text": "The trauma lingers and affects our choices and behavior in adult life. Yet, even when our loved ones don’t support us, you shouldn’t be afraid to pursue your passion. No matter how deep you bury it in your mind, it never goes away.   If you always wanted to do something — a hobby, a sport, or a craft — try to find like-minded people. Join groups on the internet and subscribe to relevant resources. Try to immerse yourself in it, and soon you will find a way to start. Listen to the stories of people who started late, but succeeded.   Amanda did it. And so can you. "
+              }
+            },
+            {
+              "id": "f43db7ab-d652-4e63-af78-de16e953fd6d",
+              "version": 1,
+              "position": 16,
+              "content": {
+                "type": "quote",
+                "title": "Quote",
+                "text": "\"The two most important days in your life are the day you are born and the day you <c>find out why</c>.\" – <b>Mark Twain</b>",
+                "continueButtonTitle": "Finish Episode"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Don't talk to the neighbor boy!",
+          "description": "\"Don't talk to him!\" Parents want you to hang out with the best!",
+          "position": 2,
+          "id": "6e9f46a9-0abf-43ec-a16d-956e005687b5",
+          "stories": [
+            {
+              "id": "4ce13418-91f8-4b88-80f4-25b176dd5dfc",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Listen to the right music!",
+          "description": "\"Listen to the right and good music!\" Parents want you to be on the \"right\" topic.",
+          "position": 3,
+          "id": "6af761fd-6bac-40f2-96de-1c2474fa810d",
+          "stories": [
+            {
+              "id": "46952b23-0e88-4d93-a23b-7e14a58fa98b",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Your father is a jerk!",
+          "description": "\"Your dad/mom is a freak and he/she left us\" The parent wants you to hate the other parent (even if it's necessary).",
+          "position": 4,
+          "id": "e75d4be9-e160-44e4-8f28-15241868df50",
+          "stories": [
+            {
+              "id": "575a9ea3-2f58-4274-b684-c7029681cebc",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Don't be gay!",
+          "description": "\"Why aren't you like the others?\" Parents do not want to see that the child is not \"like everyone else\"",
+          "position": 5,
+          "id": "55837f8b-523a-45d8-acc0-593a286fdde6",
+          "stories": [
+            {
+              "id": "a6d70fe2-3fb9-4bd0-8d49-9fe670cdf79a",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Why are you trying? You will never be a football player!",
+          "description": "\"Do what others do!\" Parents want their child to do what they did and what other children do.",
+          "position": 6,
+          "id": "d652005d-b34f-47d1-b470-c39b6e7d74cc",
+          "stories": [
+            {
+              "id": "73f924fb-b69c-41f5-abd0-0392758b3205",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "You are so ugly!",
+          "description": "\"You're not like the rest!\" Parents are unhappy that you do not take care of yourself in the common way.",
+          "position": 7,
+          "id": "529fb3ad-02b3-4445-bea8-7ff15e70ca6a",
+          "stories": [
+            {
+              "id": "6652c0e5-4a95-4622-abea-c5e2c99c7e88",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Your hobbies are lame!",
+          "description": "\"It's just a waste of time!\" Parents do not see the point in your hobby!",
+          "position": 8,
+          "id": "b5c654ba-2c4c-41b3-88e2-a9ae0b0dd313",
+          "stories": [
+            {
+              "id": "e033fb9e-00f8-4cff-ae0c-9bc7ee5383f8",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "You will never be like your sister!",
+          "description": "\"You're just a loser!\" Your brother/sister would do much better!",
+          "position": 9,
+          "id": "09f669c4-4559-489c-b894-51a5a8d839db",
+          "stories": [
+            {
+              "id": "1062b513-ffb1-467b-a6e7-78e536eec813",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "He is “wrong guy”",
+          "description": "\"Don't date him!\" Parents think He's just a loser and you deserve better!",
+          "position": 10,
+          "id": "e7a649c0-401c-455f-b2d9-700a236055ee",
+          "stories": [
+            {
+              "id": "08844427-404c-4e9d-86a2-88fba2a998d0",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Course summary",
+          "description": "Summing up the course experience. What did we learn together?",
+          "position": 11,
+          "id": "260574f7-77f1-45db-b6f7-29d091bee6c6",
+          "stories": [
+            {
+              "id": "92af595f-3689-4d70-b7af-a7a077510344",
+              "version": 1,
+              "position": 0,
+              "content": {
+                "type": "textIllustration",
+                "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
+                "header": "New story header",
+                "text": "New story text"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,199 +1,270 @@
 {
     "type": "object",
-    "properties": {
-        "version": {
+    "properties":
+    {
+        "version":
+        {
             "type": "number",
             "minimum": 0,
             "default": 1.0
         },
-        "contentURL": {
+        "contentURL":
+        {
             "type": "string"
         },
-        "courses": {
+        "courses":
+        {
             "type": "array",
-            "items": {
+            "items":
+            {
                 "type": "object",
-                "properties": {
-                    "flowTopic": {
+                "properties":
+                {
+                    "flowTopic":
+                    {
                         "type": "string",
                         "default": "newTopic"
                     },
-                    "version": {
+                    "version":
+                    {
                         "type": "number",
                         "default": 1,
                         "minimum": 0
                     },
-                    "id": {
+                    "id":
+                    {
                         "type": "string",
                         "default": "$uuid"
                     },
-                    "card": {
+                    "card":
+                    {
                         "type": "object",
-                        "properties": {
-                            "title": {
+                        "properties":
+                        {
+                            "title":
+                            {
                                 "type": "string",
                                 "default": "New card title"
                             },
-                            "imageURL": {
+                            "imageURL":
+                            {
                                 "type": "string",
                                 "default": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg"
                             },
-                            "description": {
+                            "description":
+                            {
                                 "type": "string",
                                 "default": "New card description"
+                            },
+                            "header":
+                            {
+                                "type": "string",
+                                "default": "Microlearning"
                             }
                         },
-                        "default": {
+                        "default":
+                        {
                             "title": "New card title",
                             "imageURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
-                            "overview": "New card overview"
+                            "overview": "New card overview",
+                            "header": "Microlearning"
                         },
-                        "required": [
+                        "required":
+                        [
                             "title",
                             "imageURL",
                             "description"
                         ]
                     },
-                    "preview": {
+                    "preview":
+                    {
                         "type": "object",
-                        "properties": {
-                            "title": {
+                        "properties":
+                        {
+                            "title":
+                            {
                                 "type": "string"
                             },
-                            "imageURL": {
+                            "imageURL":
+                            {
                                 "type": "string"
                             },
-                            "overview": {
+                            "overview":
+                            {
                                 "type": "string"
                             }
                         },
-                        "default": {
+                        "default":
+                        {
                             "title": "New preview title",
                             "imageURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
                             "overview": "New preview overview"
                         },
-                        "required": [
+                        "required":
+                        [
                             "title",
                             "imageURL",
                             "overview"
                         ]
                     },
-                    "episodes": {
+                    "episodes":
+                    {
                         "type": "array",
-                        "items": {
+                        "items":
+                        {
                             "type": "object",
-                            "properties": {
-                                
-                                "title": {
+                            "properties":
+                            {
+                                "title":
+                                {
                                     "type": "string",
                                     "default": "New episode title"
                                 },
-                                "description": {
+                                "description":
+                                {
                                     "type": "string",
                                     "default": "New episode description"
                                 },
-                                "position": {
+                                "position":
+                                {
                                     "type": "integer",
                                     "minimum": 0,
                                     "default": 1
                                 },
-                                "id": {
+                                "id":
+                                {
                                     "type": "string",
                                     "default": "$uuid"
                                 },
-                                "stories": {
+                                "stories":
+                                {
                                     "type": "array",
-                                    "items": {
+                                    "items":
+                                    {
                                         "type": "object",
-                                        "properties": {
-                                            "id": {
+                                        "properties":
+                                        {
+                                            "id":
+                                            {
                                                 "type": "string",
                                                 "default": "$uuid"
                                             },
-                                            "version": {
+                                            "version":
+                                            {
                                                 "type": "number",
                                                 "minimum": 0,
                                                 "default": 1.0
                                             },
-                                            "position": {
+                                            "position":
+                                            {
                                                 "type": "integer",
                                                 "minimum": 0,
                                                 "default": 1
                                             },
-                                            "transition": {
+                                            "content":
+                                            {
                                                 "type": "object",
-                                                "properties": {
-                                                    "type": {
+                                                "properties":
+                                                {
+                                                    "type":
+                                                    {
                                                         "type": "string",
-                                                        "enum": [
-                                                            "fade_in"
-                                                        ]
-                                                    }
-                                                },
-                                                "required": [
-                                                    
-                                                ]
-                                            },
-                                            "content": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "type": {
-                                                        "type": "string",
-                                                        "enum": [
+                                                        "enum":
+                                                        [
                                                             "textIllustration",
-                                                            "questionWithOneValidAnswer",
-                                                            "quoteWithShareButton"
+                                                            "question",
+                                                            "quote"
                                                         ]
                                                     },
-                                                    "illustrationURL": {
+                                                    "illustrationURL":
+                                                    {
                                                         "type": "string"
                                                     },
-                                                    "header": {
+                                                    "question":
+                                                    {
                                                         "type": "string"
                                                     },
-                                                    "text": {
+                                                    "questionFooter":
+                                                    {
                                                         "type": "string"
                                                     },
-                                                    "options": {
+                                                    "header":
+                                                    {
+                                                        "type": "string"
+                                                    },
+                                                    "text":
+                                                    {
+                                                        "type": "string"
+                                                    },
+                                                    "title":
+                                                    {
+                                                        "type": "string"
+                                                    },
+                                                    "quote":
+                                                    {
+                                                        "type": "string"
+                                                    },
+                                                    "answerOptions":
+                                                    {
                                                         "type": "array",
-                                                        "items": {
+                                                        "items":
+                                                        {
                                                             "type": "object",
-                                                            "properties": {
-                                                                "text": {
+                                                            "properties":
+                                                            {
+                                                                "text":
+                                                                {
                                                                     "type": "string"
                                                                 },
-                                                                "valid": {
+                                                                "isCorrect":
+                                                                {
                                                                     "type": "boolean"
                                                                 },
-                                                                "explanation":{
-                                                                    "type": "string"
+                                                                "explanation":
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties":
+                                                                    {
+                                                                        "header":
+                                                                        {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "text":
+                                                                        {
+                                                                            "type": "string"
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }
                                                     },
-                                                    "callToAction": {
+                                                    "continueButtonTitle":
+                                                    {
                                                         "type": "string"
                                                     }
-
                                                 },
-                                                "default": {
+                                                "default":
+                                                {
                                                     "type": "textIllustration",
                                                     "illustrationURL": "https://i.onthe.io/ttmdhw747dgvun60p.f9d74fae.jpeg",
                                                     "header": "New story header",
                                                     "text": "New story text"
                                                 },
-                                                "required": [
+                                                "required":
+                                                [
                                                     "type"
                                                 ]
                                             }
                                         },
-                                        "required": [
+                                        "required":
+                                        [
                                             "id",
                                             "version",
                                             "position",
                                             "content"
                                         ],
-                                        "default": {
+                                        "default":
+                                        {
                                             "id": "60e5daf0-ac93-4550-b443-aaf7158cf356",
                                             "version": 1,
                                             "position": 1
@@ -201,7 +272,8 @@
                                     }
                                 }
                             },
-                            "required": [
+                            "required":
+                            [
                                 "id",
                                 "position",
                                 "title",
@@ -211,7 +283,8 @@
                         }
                     }
                 },
-                "required": [
+                "required":
+                [
                     "version",
                     "id",
                     "flowTopic",
@@ -222,7 +295,8 @@
             }
         }
     },
-    "required": [
+    "required":
+    [
         "version",
         "courses"
     ]

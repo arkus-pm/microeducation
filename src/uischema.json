@@ -50,6 +50,10 @@
                                             "elements": [
                                                 {
                                                     "type": "Control",
+                                                    "scope": "#/properties/header"
+                                                },
+                                                {
+                                                    "type": "Control",
                                                     "scope": "#/properties/title"
                                                 },
                                                 {
@@ -150,11 +154,6 @@
                                                                             "type": "Control",
                                                                             "scope": "#/properties/version"
                                                                         },
-                                                                        
-                                                                        {
-                                                                            "type": "Control",
-                                                                            "scope": "#/properties/transition"
-                                                                        },
                                                                         {
                                                                             "type": "Control",
                                                                             "scope": "#/properties/content",
@@ -179,7 +178,7 @@
                                                                                                                 "const": "textIllustration"
                                                                                                             },
                                                                                                             {
-                                                                                                                "const": "questionWithOneValidAnswer"
+                                                                                                                "const": "question"
                                                                                                             }
                                                                                                         ]
                                                                                                     }
@@ -216,10 +215,7 @@
                                                                                                                 "const": "textIllustration"
                                                                                                             },
                                                                                                             {
-                                                                                                                "const": "questionWithOneValidAnswer"
-                                                                                                            },
-                                                                                                            {
-                                                                                                                "const": "quoteWithShareButton"
+                                                                                                                "const": "quote"
                                                                                                             }
                                                                                                         ]
                                                                                                     }
@@ -228,7 +224,7 @@
                                                                                         },
                                                                                         {
                                                                                             "type": "Control",
-                                                                                            "scope": "#/properties/options",
+                                                                                            "scope": "#/properties/answerOptions",
                                                                                             "rule": {
                                                                                                 "effect": "SHOW",
                                                                                                 "condition": {
@@ -236,7 +232,7 @@
                                                                                                     "schema": {
                                                                                                         "anyOf": [
                                                                                                             {
-                                                                                                                "const": "questionWithOneValidAnswer"
+                                                                                                                "const": "question"
                                                                                                             }
                                                                                                         ]
                                                                                                     }
@@ -245,7 +241,7 @@
                                                                                         },
                                                                                         {
                                                                                             "type": "Control",
-                                                                                            "scope": "#/properties/callToAction",
+                                                                                            "scope": "#/properties/question",
                                                                                             "rule": {
                                                                                                 "effect": "SHOW",
                                                                                                 "condition": {
@@ -253,7 +249,58 @@
                                                                                                     "schema": {
                                                                                                         "anyOf": [
                                                                                                             {
-                                                                                                                "const": "quoteWithShareButton"
+                                                                                                                "const": "question"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/questionFooter",
+                                                                                            "rule": {
+                                                                                                "effect": "SHOW",
+                                                                                                "condition": {
+                                                                                                    "scope": "#/properties/type",
+                                                                                                    "schema": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "const": "question"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/title",
+                                                                                            "rule": {
+                                                                                                "effect": "SHOW",
+                                                                                                "condition": {
+                                                                                                    "scope": "#/properties/type",
+                                                                                                    "schema": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "const": "quote"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/continueButtonTitle",
+                                                                                            "rule": {
+                                                                                                "effect": "SHOW",
+                                                                                                "condition": {
+                                                                                                    "scope": "#/properties/type",
+                                                                                                    "schema": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "const": "quote"
                                                                                                             }
                                                                                                         ]
                                                                                                     }

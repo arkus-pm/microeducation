@@ -214,11 +214,13 @@
                                                             {
                                                                 "text":
                                                                 {
-                                                                    "type": "string"
+                                                                    "type": "string",
+                                                                    "default": ""
                                                                 },
                                                                 "isCorrect":
                                                                 {
-                                                                    "type": "boolean"
+                                                                    "type": "boolean",
+                                                                    "default": false
                                                                 },
                                                                 "explanation":
                                                                 {
@@ -227,12 +229,18 @@
                                                                     {
                                                                         "header":
                                                                         {
-                                                                            "type": "string"
+                                                                            "type": "string",
+                                                                            "default": ""
                                                                         },
                                                                         "text":
                                                                         {
-                                                                            "type": "string"
+                                                                            "type": "string",
+                                                                            "default": ""
                                                                         }
+                                                                    },
+                                                                    "default": {
+                                                                        "header": "",
+                                                                        "text": ""
                                                                     }
                                                                 }
                                                             }

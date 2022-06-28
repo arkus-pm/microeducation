@@ -224,23 +224,6 @@
                                                                                         },
                                                                                         {
                                                                                             "type": "Control",
-                                                                                            "scope": "#/properties/answerOptions",
-                                                                                            "rule": {
-                                                                                                "effect": "SHOW",
-                                                                                                "condition": {
-                                                                                                    "scope": "#/properties/type",
-                                                                                                    "schema": {
-                                                                                                        "anyOf": [
-                                                                                                            {
-                                                                                                                "const": "question"
-                                                                                                            }
-                                                                                                        ]
-                                                                                                    }
-                                                                                                }
-                                                                                            }
-                                                                                        },
-                                                                                        {
-                                                                                            "type": "Control",
                                                                                             "scope": "#/properties/question",
                                                                                             "rule": {
                                                                                                 "effect": "SHOW",
@@ -259,6 +242,23 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/questionFooter",
+                                                                                            "rule": {
+                                                                                                "effect": "SHOW",
+                                                                                                "condition": {
+                                                                                                    "scope": "#/properties/type",
+                                                                                                    "schema": {
+                                                                                                        "anyOf": [
+                                                                                                            {
+                                                                                                                "const": "question"
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "Control",
+                                                                                            "scope": "#/properties/answerOptions",
                                                                                             "rule": {
                                                                                                 "effect": "SHOW",
                                                                                                 "condition": {

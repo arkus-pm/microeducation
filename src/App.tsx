@@ -1,3 +1,9 @@
+
+import imageControl, {
+  imageControlTester,
+} from './ImageControl';
+
+
 import { Fragment, useState, useMemo } from 'react';
 import { JsonForms } from '@jsonforms/react';
 import Grid from '@mui/material/Grid';
@@ -93,6 +99,10 @@ const renderers = [
   ...materialRenderers,
   //register custom renderers
   { tester: ratingControlTester, renderer: RatingControl },
+  {
+    tester: imageControlTester,
+    renderer: imageControl,
+  }
 ];
 
 const modifiedData = (s: string):string => {return s.replaceAll(/\$uuid/g,uuidv4())};

@@ -4,7 +4,7 @@ import imageControl, {
 } from './ImageControl';
 
 
-import { Fragment, useState, useMemo } from 'react';
+import { Fragment, useState, useMemo, useEffect } from 'react';
 import { JsonForms } from '@jsonforms/react';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -93,7 +93,8 @@ const useStyles = makeStyles({
   },
 });
 
-const initialData = {};
+const initialData = (localStorage.getItem('initial-data'))?JSON.parse(localStorage.getItem('initial-data')!):{};
+
 
 const renderers = [
   ...materialRenderers,
@@ -111,6 +112,10 @@ const App = () => {
   const classes = useStyles();
   const [data, setData] = useState<any>(initialData);
   const stringifiedData = useMemo(() => JSON.stringify(data, null, 2), [data]);
+
+  useEffect(() => {
+  localStorage.setItem('initial-data', JSON.stringify(data));
+}, [data]);
 
   const setDataWithGeneration = (formData:any) => {
     let positionedData = formData;
@@ -336,6 +341,9 @@ function Episode(){
 return (
 
 <Fragment>
+<Typography variant={'h6'} className={classes.title}>
+            Adminka Last Update: 8 Jul, 2022
+          </Typography>
 <Grid container direction="row">
       <Grid
         // container

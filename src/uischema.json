@@ -1,6 +1,7 @@
 {
     "type": "VerticalLayout",
-    "elements": [
+    "elements":
+    [
         {
             "type": "Control",
             "scope": "#/properties/version"
@@ -12,14 +13,18 @@
         {
             "type": "ListWithDetail",
             "scope": "#/properties/courses",
-            "options": {
-                "detail": {
+            "options":
+            {
+                "detail":
+                {
                     "type": "Categorization",
-                    "elements": [
+                    "elements":
+                    [
                         {
                             "type": "Category",
                             "label": "Data",
-                            "elements": [
+                            "elements":
+                            [
                                 {
                                     "type": "Control",
                                     "scope": "#/properties/flowTopic"
@@ -31,7 +36,8 @@
                                 {
                                     "type": "Control",
                                     "scope": "#/properties/id",
-                                    "options": {
+                                    "options":
+                                    {
                                         "readonly": true
                                     }
                                 }
@@ -40,14 +46,18 @@
                         {
                             "type": "Category",
                             "label": "Card",
-                            "elements": [
+                            "elements":
+                            [
                                 {
                                     "type": "Control",
                                     "scope": "#/properties/card",
-                                    "options": {
-                                        "detail": {
+                                    "options":
+                                    {
+                                        "detail":
+                                        {
                                             "type": "VerticalLayout",
-                                            "elements": [
+                                            "elements":
+                                            [
                                                 {
                                                     "type": "Control",
                                                     "scope": "#/properties/header"
@@ -73,14 +83,18 @@
                         {
                             "type": "Category",
                             "label": "Preview",
-                            "elements": [
+                            "elements":
+                            [
                                 {
                                     "type": "Control",
                                     "scope": "#/properties/preview",
-                                    "options": {
-                                        "detail": {
+                                    "options":
+                                    {
+                                        "detail":
+                                        {
                                             "type": "VerticalLayout",
-                                            "elements": [
+                                            "elements":
+                                            [
                                                 {
                                                     "type": "Control",
                                                     "scope": "#/properties/title"
@@ -92,9 +106,10 @@
                                                 {
                                                     "type": "Control",
                                                     "scope": "#/properties/overview",
-                                                    "options": {
-        "multi": true
-      }
+                                                    "options":
+                                                    {
+                                                        "multi": true
+                                                    }
                                                 }
                                             ]
                                         }
@@ -105,23 +120,29 @@
                         {
                             "type": "Category",
                             "label": "Episodes",
-                            "elements": [
+                            "elements":
+                            [
                                 {
                                     "type": "Control",
                                     "scope": "#/properties/episodes",
-                                    "options": {
+                                    "options":
+                                    {
                                         "showSortButtons": true,
-                                        "detail": {
+                                        "detail":
+                                        {
                                             "type": "Categorization",
-                                            "elements": [
+                                            "elements":
+                                            [
                                                 {
                                                     "type": "Category",
                                                     "label": "Data",
-                                                    "elements": [
+                                                    "elements":
+                                                    [
                                                         {
                                                             "type": "Control",
                                                             "scope": "#/properties/id",
-                                                            "options": {
+                                                            "options":
+                                                            {
                                                                 "readonly": true
                                                             }
                                                         },
@@ -132,27 +153,33 @@
                                                         {
                                                             "type": "Control",
                                                             "scope": "#/properties/description",
-                                                    "options": {
-        "multi": true
-      }
+                                                            "options":
+                                                            {
+                                                                "multi": true
+                                                            }
                                                         }
                                                     ]
                                                 },
                                                 {
                                                     "type": "Category",
                                                     "label": "Stories",
-                                                    "elements": [
+                                                    "elements":
+                                                    [
                                                         {
                                                             "type": "Control",
                                                             "scope": "#/properties/stories",
-                                                            "options": {
-                                                                "detail": {
+                                                            "options":
+                                                            {
+                                                                "detail":
+                                                                {
                                                                     "type": "VerticalLayout",
-                                                                    "elements": [
+                                                                    "elements":
+                                                                    [
                                                                         {
                                                                             "type": "Control",
                                                                             "scope": "#/properties/id",
-                                                                            "options": {
+                                                                            "options":
+                                                                            {
                                                                                 "readonly": true
                                                                             }
                                                                         },
@@ -163,10 +190,13 @@
                                                                         {
                                                                             "type": "Control",
                                                                             "scope": "#/properties/content",
-                                                                            "options": {
-                                                                                "detail": {
+                                                                            "options":
+                                                                            {
+                                                                                "detail":
+                                                                                {
                                                                                     "type": "VerticalLayout",
-                                                                                    "elements": [
+                                                                                    "elements":
+                                                                                    [
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/type"
@@ -174,12 +204,16 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/illustrationURL",
-                                                                                            "rule": {
+                                                                                            "rule":
+                                                                                            {
                                                                                                 "effect": "SHOW",
-                                                                                                "condition": {
+                                                                                                "condition":
+                                                                                                {
                                                                                                     "scope": "#/properties/type",
-                                                                                                    "schema": {
-                                                                                                        "anyOf": [
+                                                                                                    "schema":
+                                                                                                    {
+                                                                                                        "anyOf":
+                                                                                                        [
                                                                                                             {
                                                                                                                 "const": "textIllustration"
                                                                                                             },
@@ -194,12 +228,16 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/header",
-                                                                                            "rule": {
+                                                                                            "rule":
+                                                                                            {
                                                                                                 "effect": "SHOW",
-                                                                                                "condition": {
+                                                                                                "condition":
+                                                                                                {
                                                                                                     "scope": "#/properties/type",
-                                                                                                    "schema": {
-                                                                                                        "anyOf": [
+                                                                                                    "schema":
+                                                                                                    {
+                                                                                                        "anyOf":
+                                                                                                        [
                                                                                                             {
                                                                                                                 "const": "textIllustration"
                                                                                                             }
@@ -211,15 +249,20 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/text",
-                                                    "options": {
-        "multi": true
-      },
-                                                                                            "rule": {
+                                                                                            "options":
+                                                                                            {
+                                                                                                "multi": true
+                                                                                            },
+                                                                                            "rule":
+                                                                                            {
                                                                                                 "effect": "SHOW",
-                                                                                                "condition": {
+                                                                                                "condition":
+                                                                                                {
                                                                                                     "scope": "#/properties/type",
-                                                                                                    "schema": {
-                                                                                                        "anyOf": [
+                                                                                                    "schema":
+                                                                                                    {
+                                                                                                        "anyOf":
+                                                                                                        [
                                                                                                             {
                                                                                                                 "const": "textIllustration"
                                                                                                             },
@@ -234,12 +277,16 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/question",
-                                                                                            "rule": {
+                                                                                            "rule":
+                                                                                            {
                                                                                                 "effect": "SHOW",
-                                                                                                "condition": {
+                                                                                                "condition":
+                                                                                                {
                                                                                                     "scope": "#/properties/type",
-                                                                                                    "schema": {
-                                                                                                        "anyOf": [
+                                                                                                    "schema":
+                                                                                                    {
+                                                                                                        "anyOf":
+                                                                                                        [
                                                                                                             {
                                                                                                                 "const": "question"
                                                                                                             }
@@ -251,12 +298,16 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/questionFooter",
-                                                                                            "rule": {
+                                                                                            "rule":
+                                                                                            {
                                                                                                 "effect": "SHOW",
-                                                                                                "condition": {
+                                                                                                "condition":
+                                                                                                {
                                                                                                     "scope": "#/properties/type",
-                                                                                                    "schema": {
-                                                                                                        "anyOf": [
+                                                                                                    "schema":
+                                                                                                    {
+                                                                                                        "anyOf":
+                                                                                                        [
                                                                                                             {
                                                                                                                 "const": "question"
                                                                                                             }
@@ -268,12 +319,16 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/answerOptions",
-                                                                                            "rule": {
+                                                                                            "rule":
+                                                                                            {
                                                                                                 "effect": "SHOW",
-                                                                                                "condition": {
+                                                                                                "condition":
+                                                                                                {
                                                                                                     "scope": "#/properties/type",
-                                                                                                    "schema": {
-                                                                                                        "anyOf": [
+                                                                                                    "schema":
+                                                                                                    {
+                                                                                                        "anyOf":
+                                                                                                        [
                                                                                                             {
                                                                                                                 "const": "question"
                                                                                                             }
@@ -285,12 +340,16 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/title",
-                                                                                            "rule": {
+                                                                                            "rule":
+                                                                                            {
                                                                                                 "effect": "SHOW",
-                                                                                                "condition": {
+                                                                                                "condition":
+                                                                                                {
                                                                                                     "scope": "#/properties/type",
-                                                                                                    "schema": {
-                                                                                                        "anyOf": [
+                                                                                                    "schema":
+                                                                                                    {
+                                                                                                        "anyOf":
+                                                                                                        [
                                                                                                             {
                                                                                                                 "const": "quote"
                                                                                                             }
@@ -302,12 +361,16 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/continueButtonTitle",
-                                                                                            "rule": {
+                                                                                            "rule":
+                                                                                            {
                                                                                                 "effect": "SHOW",
-                                                                                                "condition": {
+                                                                                                "condition":
+                                                                                                {
                                                                                                     "scope": "#/properties/type",
-                                                                                                    "schema": {
-                                                                                                        "anyOf": [
+                                                                                                    "schema":
+                                                                                                    {
+                                                                                                        "anyOf":
+                                                                                                        [
                                                                                                             {
                                                                                                                 "const": "quote"
                                                                                                             }

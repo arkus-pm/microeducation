@@ -342,7 +342,7 @@ return (
 
 <Fragment>
 <Typography variant={'h6'} className={classes.title}>
-            Adminka Last Update: 20:31, 8 Jul, 2022
+            Adminka Last Update: 20:58, 8 Jul, 2022
           </Typography>
 <Grid container direction="row">
       <Grid

@@ -91,7 +91,10 @@
                                                 },
                                                 {
                                                     "type": "Control",
-                                                    "scope": "#/properties/overview"
+                                                    "scope": "#/properties/overview",
+                                                    "options": {
+        "multi": true
+      }
                                                 }
                                             ]
                                         }
@@ -128,7 +131,10 @@
                                                         },
                                                         {
                                                             "type": "Control",
-                                                            "scope": "#/properties/description"
+                                                            "scope": "#/properties/description",
+                                                    "options": {
+        "multi": true
+      }
                                                         }
                                                     ]
                                                 },
@@ -205,6 +211,9 @@
                                                                                         {
                                                                                             "type": "Control",
                                                                                             "scope": "#/properties/text",
+                                                    "options": {
+        "multi": true
+      },
                                                                                             "rule": {
                                                                                                 "effect": "SHOW",
                                                                                                 "condition": {
